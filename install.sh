@@ -2,8 +2,7 @@
 figlet dotfiles
 
 echo '[+] download and install my favorite font.'
-cd /tmp
-wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+curl --output /tmp/FiraCode.zip -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
 mkdir /tmp/FiraCode
 unzip /tmp/FiraCode.zip -d /tmp/FiraCode
 sudo mkdir /usr/share/fonts/opentype/firacode
@@ -62,10 +61,9 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/github.com/s
 ln -s ~/github.com/sorin-ionescu/prezto ~/.zprezto
 
 echo '[-] setup prezto.'
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
+ln -s ~/github.com/sorin-ionescu/prezto/runcoms/zlogin ~/.zlogin
+ln -s ~/github.com/sorin-ionescu/prezto/runcoms/zlogout ~/.zlogout
+ln -s ~/github.com/sorin-ionescu/prezto/runcoms/zshenv ~/.zshenv
 
 echo '[-] install zinit.'
 mkdir ~/github.com/zdharma
@@ -74,11 +72,14 @@ mkdir ~/.zinit
 ln -s ~/github.com/zdharma/zinit ~/.zinit/bin
 
 echo '[-] add favorite settings files.'
-ln -fs ~/github.com/Le96/dotfiles/rcfiles/zpreztorc ~/.zpreztorc
-ln -fs ~/github.com/Le96/dotfiles/rcfiles/zprofile ~/.zprofile
-ln -fs ~/github.com/Le96/dotfiles/rcfiles/zshrc ~/.zshrc
+ln -s ~/github.com/Le96/dotfiles/rcfiles/zpreztorc ~/.zpreztorc
+ln -s ~/github.com/Le96/dotfiles/rcfiles/zprofile ~/.zprofile
+ln -s ~/github.com/Le96/dotfiles/rcfiles/zshrc ~/.zshrc
 
 
 
 echo '[*] finish!'
-echo 'Restart terminal and change font to "FiraCode Nerd Font Mono".'
+echo 'Please change the default shell to zsh by executing following command:'
+echo '  $ chsh -s '$(which zsh)' '$(whoami)
+echo ''
+echo ', restart terminal and change font to "FiraCode Nerd Font Mono".'

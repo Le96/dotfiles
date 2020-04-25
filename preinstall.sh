@@ -6,14 +6,11 @@ echo '[-] install all.'
 sudo apt install -y build-essential figlet git git-flow openssl python3-pip tmux vim-* xclip zsh
 echo '[-] make directory for github.com.'
 cd $HOME
-mkdir github.com
+mkdir -p ~/github.com/Le96
 echo '[-] make update script.'
-echo -e '#!/bin/sh\nfind . -type d -regextype egrep -regex \x27./[^/]+/[^/]+\x27 | \\\n  xargs -i sh -c \x27echo -n {}": "; cd {}; git pull && git submodule update --init --recursive\x27' > _update.sh
+echo -e '#!/bin/sh\nfind . -type d -regextype egrep -regex \x27./[^/]+/[^/]+\x27 | \\\n  xargs -i sh -c \x27echo -n {}": "; cd {}; git pull && git submodule update --init --recursive\x27' > ~/github.com/_update.sh
 chmod +x _update.sh
 echo '[-] install body of dotfiles.'
-mkdir Le96
-cd Le96
-git clone https://github.com/Le96/dotfiles.git
-cd dotfiles
+git clone https://github.com/Le96/dotfiles.git ~/github.com/Le96/dotfiles
 echo '[+] launch install.sh.'
-sh install.sh
+sh ~/github.com/Le96/dotfiles/install.sh
