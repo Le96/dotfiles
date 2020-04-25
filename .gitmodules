@@ -1,0 +1,15 @@
+[submodule "github.com/Shougo/dein.vim"]
+	path = github.com/Shougo/dein.vim
+	url = https://github.com/Shougo/dein.vim
+[submodule "github.com/powerline/powerline"]
+	path = github.com/powerline/powerline
+	url = https://github.com/powerline/powerline
+[submodule "github.com/pyenv/pyenv"]
+	path = github.com/pyenv/pyenv
+	url = https://github.com/pyenv/pyenv
+[submodule "github.com/sorin-ionescu/prezto"]
+	path = github.com/sorin-ionescu/prezto
+	url = https://github.com/sorin-ionescu/prezto
+[submodule "github.com/tmux-plugins/tpm"]
+	path = github.com/tmux-plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
