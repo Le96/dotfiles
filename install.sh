@@ -5,9 +5,9 @@ echo '[+] download and install my favorite font.'
 curl --output /tmp/FiraCode.zip -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
 mkdir /tmp/FiraCode
 unzip /tmp/FiraCode.zip -d /tmp/FiraCode
-sudo mkdir /usr/share/fonts/opentype/firacode
+sudo mkdir -p /usr/share/fonts/opentype/firacode
 sudo cp /tmp/FiraCode/*.otf /usr/share/fonts/opentype/firacode
-fc-cache -f  # -v
+fc-cache -fv
 
 
 echo '[+] make powerline setting.'
