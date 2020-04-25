@@ -13,6 +13,7 @@ fc-cache -fv
 echo '[+] make powerline setting.'
 echo '[-] install powerline-status via python3-pip.'
 python3 -m pip install powerline-status
+find ~/.local/lib -type f | grep 'powerline\.conf' | head -n 1 | xargs -i sed -i -e 's:(powerline\.conf_placeholder):{}:g' ~/github.com/Le96/dotfiles/rcfiles/tmux.conf
 
 
 echo '[+] make pyenv setting.'
@@ -52,8 +53,8 @@ ln -fs ~/github.com/Le96/dotfiles/rcfiles/vimrc ~/.vimrc
 
 
 echo '[+] make zsh setting.'
-echo '[-] change default shell to zsh.'
-chsh -s $(which zsh)
+#echo '[-] change default shell to zsh.'
+#chsh -s $(which zsh)
 
 echo '[-] install prezto.'
 mkdir ~/github.com/sorin-ionescu
