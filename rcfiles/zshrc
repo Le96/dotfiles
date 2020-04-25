@@ -1,0 +1,54 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+## alias
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+### alias of ls family
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias l1='ls -C1'
+
+### alias from le96
+alias c='clear'
+#alias goodbye='shutdown -h now'
+alias rot13='tr A-Za-z N-ZA-Mn-za-m'
+alias up='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get clean && sudo apt-get autoclean && sudo apt-get check; zsh -c "cd ~/github.com; ./_update.sh"'
+
+### alias for clipboard
+alias pbcopy="xclip -in -sel clip"
+alias pbpaste="xclip -out -sel clip"
+
+
+## pipenv
+#eval "$(pipenv --completion)"
+alias pipsh='pipenv shell'
+
+
+## pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+
+
+## zinit
+source "${HOME}/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+zinit ice wait'!0'; zinit load momo-lab/zsh-abbrev-alias
+zinit ice wait'!0'; zinit load zsh-users/zsh-syntax-highlighting
+zinit ice wait'!0'; zinit load zsh-users/zsh-completions
