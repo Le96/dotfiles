@@ -1,5 +1,5 @@
 #!/bin/sh
-figlet dotfiles
+figlet Le96_dotfiles
 
 echo '[+] download and install my favorite font.'
 curl --output /tmp/FiraCode.zip -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
@@ -83,7 +83,10 @@ ln -s ~/github.com/Le96/dotfiles/rcfiles/zshrc ~/.zshrc
 
 
 echo '[*] finish!'
-echo 'Please change the default shell to zsh by executing following command:'
-echo '  $ chsh -s '$(which zsh)' '$(whoami)
-echo ''
-echo ', restart terminal and change font to "FiraCode Nerd Font Mono".'
+echo '[i] Please follow the instructions below:'
+echo '    - $ chsh -s '$(which zsh)' '$(whoami)
+echo '    - restart terminal'
+echo '    - change font to "FiraCode Nerd Font Mono"'
+echo '    - in tmux, press Ctrl-B + Shift-I'
+echo '    - launch vim to load plugins'
+echo '[i] Have a nice shell life!'
