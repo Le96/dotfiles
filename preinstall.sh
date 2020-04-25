@@ -3,7 +3,7 @@ echo '[+] install pre-requirements.'
 echo '[-] update package list.'
 sudo apt update
 echo '[-] install all.'
-sudo apt install build-essential figlet git openssl python3-pip tmux vim-* xclip zsh
+sudo apt install build-essential figlet git git-flow openssl python3-pip tmux vim-* xclip zsh
 echo '[-] make directory for github.com.'
 cd $HOME
 mkdir github.com
