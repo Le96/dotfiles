@@ -13,7 +13,10 @@ fc-cache -fv
 echo '[+] make powerline setting.'
 echo '[-] install powerline-status via python3-pip.'
 python3 -m pip install powerline-status
-find ~/.local/lib -type f | grep 'powerline\.conf' | head -n 1 | xargs -i sed -i -e 's:(powerline\.conf_placeholder):{}:g' ~/github.com/Le96/dotfiles/rcfiles/tmux.conf
+
+echo '[-] install powerline via github.'
+mkdir ~/github.com/powerline
+git clone https://github.com/powerline/powerline.git ~/github.com/powerline/powerline
 
 
 echo '[+] make pyenv setting.'
