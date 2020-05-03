@@ -23,21 +23,24 @@ echo '[+] make pyenv setting.'
 echo '[-] install pyenv.'
 mkdir ~/github.com/pyenv
 git clone https://github.com/pyenv/pyenv.git ~/github.com/pyenv/pyenv
-ln -s ~/github.com/pyenv/pyenv ~/.pyenv
+ln -fs ~/github.com/pyenv/pyenv ~/.pyenv
 
 
 echo '[+] make ssh setting.'
 echo '[-] make default ssh key.'
 mkdir ~/.ssh
-ssh-keygen -C '' -f ~/.ssh/id_ed25519 -t ed25519
-
+if [ ! -e ~/.ssh/id_ed25519 ]; then
+  ssh-keygen -C '' -f ~/.ssh/id_ed25519 -P '' -t ed25519
+else
+  echo '[!] sshkey already exists.'
+fi
 
 echo '[+] make tmux setting.'
 echo '[-] install tpm.'
 mkdir ~/github.com/tmux-plugins
 git clone https://github.com/tmux-plugins/tpm.git ~/github.com/tmux-plugins/tpm
 mkdir -p ~/.tmux/plugins
-ln -s ~/github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+ln -fs ~/github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 
 echo '[-] add favorite settings file.'
@@ -49,7 +52,7 @@ echo '[-] install dein.vim.'
 mkdir ~/github.com/Shougo
 git clone https://github.com/Shougo/dein.vim.git ~/github.com/Shougo/dein.vim
 mkdir -p ~/.cache/dein/repos
-ln -s ~/github.com ~/.cache/dein/repos/github.com
+ln -fs ~/github.com ~/.cache/dein/repos/github.com
 
 echo '[-] add favorite settings file.'
 ln -fs ~/github.com/Le96/dotfiles/rcfiles/vimrc ~/.vimrc
@@ -62,23 +65,23 @@ echo '[+] make zsh setting.'
 echo '[-] install prezto.'
 mkdir ~/github.com/sorin-ionescu
 git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/github.com/sorin-ionescu/prezto
-ln -s ~/github.com/sorin-ionescu/prezto ~/.zprezto
+ln -fs ~/github.com/sorin-ionescu/prezto ~/.zprezto
 
 echo '[-] setup prezto.'
-ln -s ~/github.com/sorin-ionescu/prezto/runcoms/zlogin ~/.zlogin
-ln -s ~/github.com/sorin-ionescu/prezto/runcoms/zlogout ~/.zlogout
-ln -s ~/github.com/sorin-ionescu/prezto/runcoms/zshenv ~/.zshenv
+ln -fs ~/github.com/sorin-ionescu/prezto/runcoms/zlogin ~/.zlogin
+ln -fs ~/github.com/sorin-ionescu/prezto/runcoms/zlogout ~/.zlogout
+ln -fs ~/github.com/sorin-ionescu/prezto/runcoms/zshenv ~/.zshenv
 
 echo '[-] install zinit.'
 mkdir ~/github.com/zdharma
 git clone https://github.com/zdharma/zinit.git ~/github.com/zdharma/zinit
 mkdir ~/.zinit
-ln -s ~/github.com/zdharma/zinit ~/.zinit/bin
+ln -fs ~/github.com/zdharma/zinit ~/.zinit/bin
 
 echo '[-] add favorite settings files.'
-ln -s ~/github.com/Le96/dotfiles/rcfiles/zpreztorc ~/.zpreztorc
-ln -s ~/github.com/Le96/dotfiles/rcfiles/zprofile ~/.zprofile
-ln -s ~/github.com/Le96/dotfiles/rcfiles/zshrc ~/.zshrc
+ln -fs ~/github.com/Le96/dotfiles/rcfiles/zpreztorc ~/.zpreztorc
+ln -fs ~/github.com/Le96/dotfiles/rcfiles/zprofile ~/.zprofile
+ln -fs ~/github.com/Le96/dotfiles/rcfiles/zshrc ~/.zshrc
 
 
 
