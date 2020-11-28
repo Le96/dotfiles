@@ -75,3 +75,8 @@ fi
 if [ -e $HOME/.proxyprofile ]; then
   source $HOME/.proxyprofile
 fi
+## credential
+if [ -e $HOME/.credential ]; then
+  source $HOME/.credential
+fi
+
