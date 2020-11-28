@@ -79,6 +79,7 @@ mkdir ~/.zinit
 ln -fs ~/github.com/zdharma/zinit ~/.zinit/bin
 
 echo '[-] add favorite settings files.'
+cp ~/github.com/Le96/dotfiles/rcfiles/credential ~/.credential
 ln -fs ~/github.com/Le96/dotfiles/rcfiles/zpreztorc ~/.zpreztorc
 ln -fs ~/github.com/Le96/dotfiles/rcfiles/zprofile ~/.zprofile
 ln -fs ~/github.com/Le96/dotfiles/rcfiles/zshrc ~/.zshrc
