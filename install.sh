@@ -80,6 +80,7 @@ ln -fs ~/github.com/zdharma/zinit ~/.zinit/bin
 
 echo '[-] add favorite settings files.'
 cp -p ~/github.com/Le96/dotfiles/rcfiles/credential ~/.credential
+ln -fs ~/github.com/Le96/dotfiles/rcfiles/p10k ~/.p10k.zsh
 ln -fs ~/github.com/Le96/dotfiles/rcfiles/zpreztorc ~/.zpreztorc
 ln -fs ~/github.com/Le96/dotfiles/rcfiles/zprofile ~/.zprofile
 ln -fs ~/github.com/Le96/dotfiles/rcfiles/zshrc ~/.zshrc
