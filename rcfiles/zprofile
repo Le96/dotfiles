@@ -43,7 +43,6 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
-  $HOME/.pyenv/bin
   $HOME/.local/bin
   /usr/local/{bin,sbin}
   $path
@@ -68,9 +67,9 @@ fi
 # ADDITION
 #
 ## pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 ## proxy
 if [ -e $HOME/.proxyprofile ]; then
   source $HOME/.proxyprofile

@@ -52,14 +52,12 @@ alias up='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-up
 alias pbcopy="xclip -in -sel clip"
 alias pbpaste="xclip -out -sel clip"
 
+## pyenv
+eval "$(pyenv init -)"
 
 ## pipenv
 #eval "$(pipenv --completion)"
 alias pipsh='pipenv shell'
-
-
-## pyenv
-export PYENV_ROOT="$HOME/.pyenv"
 
 
 ## zinit
