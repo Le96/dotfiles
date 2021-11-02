@@ -73,10 +73,10 @@ ln -fs ~/github.com/sorin-ionescu/prezto/runcoms/zlogout ~/.zlogout
 ln -fs ~/github.com/sorin-ionescu/prezto/runcoms/zshenv ~/.zshenv
 
 echo '[-] install zinit.'
-mkdir ~/github.com/zdharma
-git clone https://github.com/zdharma/zinit.git ~/github.com/zdharma/zinit
+mkdir ~/github.com/zdharma-continuum
+git clone https://github.com/zdharma-continuum/zinit.git ~/github.com/zdharma-continuum/zinit
 mkdir ~/.zinit
-ln -fs ~/github.com/zdharma/zinit ~/.zinit/bin
+ln -fs ~/github.com/zdharma-continuum/zinit ~/.zinit/bin
 
 echo '[-] add favorite settings files.'
 cp -p ~/github.com/Le96/dotfiles/rcfiles/credential ~/.credential
