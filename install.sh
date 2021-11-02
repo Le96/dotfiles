@@ -84,6 +84,7 @@ ln -fs ~/github.com/Le96/dotfiles/rcfiles/p10k ~/.p10k.zsh
 ln -fs ~/github.com/Le96/dotfiles/rcfiles/zpreztorc ~/.zpreztorc
 ln -fs ~/github.com/Le96/dotfiles/rcfiles/zprofile ~/.zprofile
 ln -fs ~/github.com/Le96/dotfiles/rcfiles/zshrc ~/.zshrc
+hostname | cut -d '.' -f 1 | xargs -i sed --in-place "s/'default'/'{}'" ~/.zpreztorc
 
 
 
